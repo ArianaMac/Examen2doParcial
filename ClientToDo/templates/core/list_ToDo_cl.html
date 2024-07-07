@@ -1,0 +1,28 @@
+{% extends "base/base.html" %}
+
+{% block title %}LIST TO-DO VIEW{% endblock title %}
+
+{% block content %}
+    <a href="{% url 'core:create_sgg' %}" class="btn btn-outline-success form-control">New Task ToDo</a>
+    <table class="table table-striped">
+        <thead>
+            <th>TITLE</th>
+            <th>DESCRIPTION</th>
+            <th>STATUS</th>
+            <th>USER</th>
+            <th></th>
+            <th>ACTIONS</th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for ToDo in object_list %}
+                <tr>
+                    <td>{{ ToDoList.title }}</td>
+                    <td>{{ ToDoList.description }}</td>
+                    <td>{{ ToDoList.status }}</td>
+                    <td>{{ ToDoList.user }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
